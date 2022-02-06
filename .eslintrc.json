@@ -19,6 +19,7 @@
       }
     ],
     "eol-last": "error",
+    "no-multiple-empty-lines": "error",
     "object-curly-spacing": ["error", "always"],
     "semi": "off",
     "sort-imports": ["error", {
