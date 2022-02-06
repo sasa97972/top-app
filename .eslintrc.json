@@ -11,13 +11,25 @@
   ],
   "root": true,
   "rules": {
-    "semi": "off",
     "@typescript-eslint/semi": ["warn"],
     "@typescript-eslint/no-empty-interface": [
       "error",
       {
         "allowSingleExtends": true
       }
-    ]
+    ],
+    "eol-last": "error",
+    "object-curly-spacing": ["error", "always"],
+    "semi": "off",
+    "sort-imports": ["error", {
+      "allowSeparatedGroups": true,
+      "ignoreCase": false,
+      "ignoreDeclarationSort": false,
+      "ignoreMemberSort": false,
+      "memberSyntaxSortOrder": ["all", "multiple", "single", "none"]
+    }],
+    "space-in-parens": "error",
+    "spaced-comment": "error",
+    "quotes": ["error", "double"]
   }
 }
