@@ -1,6 +1,7 @@
 {
   "extends": [
     "eslint:recommended",
+    "esnext/style-guide",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "next/core-web-vitals"
@@ -29,6 +30,7 @@
       "ignoreMemberSort": false,
       "memberSyntaxSortOrder": ["all", "multiple", "single", "none"]
     }],
+    "space-before-function-paren": ["error", "never"],
     "space-in-parens": "error",
     "spaced-comment": "error",
     "quotes": ["error", "double"]
