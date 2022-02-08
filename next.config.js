@@ -4,9 +4,24 @@ module.exports = {
 		config.module.rules.push({
 			issuer: /\.[jt]sx?$/,
 			test: /\.svg$/i,
-			use: [ "@svgr/webpack" ],
+			use: [
+				{
+					loader: "@svgr/webpack",
+					options: {
+						svgoConfig: {
+							plugins: [{
+								name: "preset-default",
+								params: {
+									overrides: {
+										removeViewBox: false,
+									},
+								},
+							}],
+						},
+					},
+				},
+			],
 		});
-
 		return config;
 	},
 };

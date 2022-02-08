@@ -20,6 +20,7 @@
         "allowSingleExtends": true
       }
     ],
+    "array-bracket-spacing": ["error", "never"],
     "eol-last": "error",
     "no-extra-parens": ["warn", "all", {
       "conditionalAssign": false,
