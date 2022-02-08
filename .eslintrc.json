@@ -21,6 +21,11 @@
       }
     ],
     "eol-last": "error",
+    "no-extra-parens": ["warn", "all", {
+      "conditionalAssign": false,
+      "ignoreJSX": "multi-line",
+      "returnAssign": false
+    }],
     "no-multiple-empty-lines": "error",
     "object-curly-spacing": ["error", "always"],
     "semi": "off",
