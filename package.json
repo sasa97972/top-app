@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "debug": "NODE_OPTIONS='--inspect' next dev",
-    "build": "next build",
+    "build": "stylelint \"**/*.(css|scss)\" && next build",
     "lint": "next lint",
     "start": "next start",
     "stylelint": "stylelint \"**/*.(css|scss)\" --fix"
