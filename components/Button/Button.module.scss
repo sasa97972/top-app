@@ -1,0 +1,57 @@
+@import "styles/config/variables";
+
+.arrow {
+  display: inline-block;
+  margin-left: 10px;
+  transition: transform $transition-time;
+
+  &.down {
+    transform: rotate(90deg);
+  }
+
+  > svg {
+    fill: currentColor;
+    transition: fill $transition-time;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color $transition-time, color $transition-time, transform $transition-time;
+
+  & + & {
+    margin-left: 20px;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &.primary {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-primary-hover;
+    }
+  }
+
+  &.secondary {
+    border: 1px solid $color-grey-light;
+    background-color: $color-white;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+
+      .arrow svg {
+        fill: $color-white;
+      }
+    }
+  }
+}

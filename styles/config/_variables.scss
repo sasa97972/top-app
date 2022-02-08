@@ -2,10 +2,15 @@
 $color-black: #3B434E;
 $color-white: #FFF;
 $color-primary: #7653FC;
+$color-primary-hover: #6344DF;
 $color-red: #FC8360;
 $color-green: #1DC47E;
 $color-green-light: #C8F8E4;
 $color-grey: #F5F6F8;
+$color-grey-light: #EBEBEB;
 
 /* Fonts */
 $font-main: "Noto Sans KR", sans-serif;
+
+/* Animation */
+$transition-time: 0.3s;
