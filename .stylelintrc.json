@@ -16,6 +16,12 @@
         ]
       }
     ],
-    "selector-class-pattern": "^.*$"
+    "selector-class-pattern": "^.*$",
+    "value-keyword-case": [
+      "lower",
+      {
+        "camelCaseSvgKeywords": true
+      }
+    ]
   }
 }
