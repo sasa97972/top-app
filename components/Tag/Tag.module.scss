@@ -1,0 +1,94 @@
+@import "styles/config/variables";
+
+.tag {
+  display: inline-block;
+  padding: 5px 12px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+
+  & + & {
+    margin-left: 5px;
+  }
+
+  &.s {
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  &.m {
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  &.ghost {
+    border: 1px solid $color-grey-light;
+  }
+
+  &.red {
+    background-color: $color-electric-red;
+    color: $color-white;
+    font-weight: bold;
+  }
+
+  &.grey {
+    background-color: $color-light-steel-blue;
+    color: $color-white;
+    font-weight: bold;
+  }
+
+  &.green {
+    background-color: $color-green-light;
+    color: $color-green;
+    font-weight: bold;
+  }
+
+  &.primary {
+    border: 1px solid $color-primary;
+    color: $color-primary;
+  }
+
+  &.link {
+    padding: 0;
+    transition: color $transition-time, background-color $transition-time, border-color $transition-time;
+
+    a {
+      display: inline-block;
+      padding: 5px 12px;
+    }
+
+    &.ghost {
+      &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+      }
+    }
+
+    &.red {
+      &:hover {
+        background-color: $color-primary;
+      }
+    }
+
+    &.grey {
+      &:hover {
+        border-color: $color-primary;
+        background-color: transparent;
+        color: $color-primary;
+      }
+    }
+
+    &.green {
+      &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+      }
+    }
+
+    &.primary {
+      &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+      }
+    }
+  }
+}

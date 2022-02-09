@@ -2,7 +2,6 @@ import { ParagraphProps } from "./Paragraph.props";
 import cn from "classnames";
 import styles from "./Paragraph.module.scss";
 
-
 export const Paragraph = ({ children, size = "m", className, ...props }: ParagraphProps): JSX.Element => {
 	return (
 		<p
