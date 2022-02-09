@@ -4,6 +4,7 @@
     "esnext/style-guide",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
     "next/core-web-vitals"
   ],
   "ignorePatterns": ["/next-env.d.ts", "**/node_modules/*"],
