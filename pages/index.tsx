@@ -1,6 +1,13 @@
-import { Button, Heading, Paragraph, Tag } from "../components";
+import { Button, Heading, Paragraph, Rating, Tag } from "../components";
+import { useState } from "react";
 
 export default function Home() {
+	const [rating, setRating] = useState<number>(3);
+
+	const handleRatingChange = (rating: number): void => {
+		setRating(rating);
+	};
+
 	return (
 		<>
 			<Heading tag="h1">Заголовок</Heading>
@@ -38,6 +45,8 @@ export default function Home() {
 				<Tag href="#" size="s" color="grey">Sample tag</Tag>
 				<Tag href="#" size="s" color="primary">Sample tag</Tag>
 			</div>
+			<Rating rating={rating} setRating={handleRatingChange} isEditable />
+			<Rating rating={2} />
 		</>
 	);
 }

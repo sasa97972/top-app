@@ -1,0 +1,23 @@
+@import "styles/config/variables";
+
+.rating {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.star {
+  transition: fill $transition-time;
+
+  & + & {
+    margin-left: 5px;
+  }
+
+  &.editable {
+    cursor: pointer;
+  }
+
+  &.filled {
+    fill: $color-primary;
+  }
+}
