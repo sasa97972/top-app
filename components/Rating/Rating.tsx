@@ -16,7 +16,8 @@ const buildRating = (rating: number, isEditable: boolean, setRating?: (rating: n
 			data-rating={index + 1}
 			onClick={isEditable ? () => setRating && setRating(index + 1) : undefined}
 			onKeyDown={isEditable ? (e: KeyboardEvent<SVGSVGElement>) => {
-				if (e.key === "Enter") {
+				console.log(e.key);
+				if (e.key === " ") {
 					setRating && setRating(index + 1);
 				}
 			} : undefined}
