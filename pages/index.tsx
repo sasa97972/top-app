@@ -1,6 +1,6 @@
 import { Button, Heading, Paragraph, Rating, Tag } from "../components";
+import { ReactElement, useState } from "react";
 import { Layout } from "../layout/";
-import { useState } from "react";
 
 export default function Home() {
 	const [rating, setRating] = useState<number>(3);
@@ -10,7 +10,7 @@ export default function Home() {
 	};
 
 	return (
-		<Layout>
+		<>
 			<Heading tag="h1">Заголовок</Heading>
 			<div>
 				<Button arrow="down">Узнать подробнее</Button>
@@ -48,6 +48,12 @@ export default function Home() {
 			</div>
 			<Rating rating={rating} setRating={handleRatingChange} isEditable />
 			<Rating rating={2} />
-		</Layout>
+		</>
 	);
 }
+
+Home.getLayout = (page: ReactElement) => (
+	<Layout>
+		{page}
+	</Layout>
+);

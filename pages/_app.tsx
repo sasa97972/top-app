@@ -1,8 +1,11 @@
-import { AppProps } from "next/app";
+import { AppPropsWithLayout } from "../types/nextapp";
 import Head from "next/head";
+
 import "../styles/globals.scss";
 
-function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+const MyApp = ({ Component, pageProps }: AppPropsWithLayout): JSX.Element => {
+	const getLayout = Component.getLayout ?? (page => page);
+
 	return (
 		<>
 			<Head>
@@ -10,9 +13,9 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 				<meta name="description" content="Some description for app" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Component {...pageProps} />
+			{getLayout(<Component {...pageProps} />)}
 		</>
 	);
-}
+};
 
 export default MyApp;
