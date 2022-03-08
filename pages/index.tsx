@@ -46,8 +46,12 @@ export default function Home() {
 				<Tag href="#" size="s" color="grey">Sample tag</Tag>
 				<Tag href="#" size="s" color="primary">Sample tag</Tag>
 			</div>
-			<Rating rating={rating} setRating={handleRatingChange} isEditable />
-			<Rating rating={2} />
+			<div>
+				<Rating rating={rating} setRating={handleRatingChange} isEditable />
+			</div>
+			<div>
+				<Rating rating={2} />
+			</div>
 		</>
 	);
 }

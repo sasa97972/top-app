@@ -26,7 +26,7 @@ const buildRating = (rating: number, isEditable: boolean, setRating?: (rating: n
 		/>
 	));
 
-export const Rating = ({ rating, setRating, isEditable = false, ...props }: RatingProps): JSX.Element => {
+export const Rating = ({ rating, setRating, className, isEditable = false, ...props }: RatingProps): JSX.Element => {
 	const [ratingArray, setRatingArray] = useState<JSX.Element[]>(buildRating(rating, isEditable, setRating));
 
 	const onMouseOver = useCallback((event: MouseEvent) => {
@@ -49,6 +49,7 @@ export const Rating = ({ rating, setRating, isEditable = false, ...props }: Rati
 	return (
 		<div
 			{...props}
+			className={cn(styles.rating, className)}
 			onMouseLeave={isEditable ? setDefaultRating : undefined}
 			onMouseOver={isEditable ? onMouseOver : undefined}
 		>
