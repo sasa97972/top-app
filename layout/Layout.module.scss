@@ -1,1 +1,45 @@
 @import "styles/config/variables";
+
+.wrapper {
+  display: grid;
+  min-height: 100vh;
+  grid-template-areas:
+    ". header header ."
+    ". sidebar body ."
+    "footer footer footer footer";
+  grid-template-columns: auto 230px minmax($min-content-width, $max-content-width) auto;
+  grid-template-rows: auto 1fr auto;
+
+  @media screen and (max-width: $media-mobile) {
+    grid-template-areas:
+      "header"
+      "body"
+      "footer";
+    grid-template-columns: minmax($min-content-width, 1fr);
+  }
+}
+
+.header {
+  display: none;
+  grid-area: header;
+
+  @media screen and (max-width: $media-mobile) {
+    display: block;
+  }
+}
+
+.sidebar {
+  grid-area: sidebar;
+
+  @media screen and (max-width: $media-mobile) {
+    display: none;
+  }
+}
+
+.body {
+  grid-area: body;
+}
+
+.footer {
+  grid-area: footer;
+}
