@@ -1,1 +1,57 @@
 @import "styles/config/variables";
+
+.footer {
+  display: grid;
+  padding: 25px $gap-default;
+  background-color: $color-primary;
+  color: $color-white;
+  font-size: 16px;
+  gap: 0 $gap-default;
+  grid-template-columns: 320px auto;
+  line-height: 20px;
+
+  @media screen and (max-width: $media-mobile) {
+    padding: 25px $gap-mobile;
+    grid-template-columns: 1fr;
+
+    > * + * {
+      margin-top: $margin-default;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  margin-bottom: -$margin-default;
+
+  @media screen and (max-width: $media-mobile) {
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+}
+
+.link {
+  display: inline-block;
+  margin-bottom: $margin-default;
+  transition: color $transition-time;
+
+  @media screen and (max-width: $media-mobile) {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    color: $color-grey-light;
+  }
+
+  & + & {
+    margin-left: 40px;
+
+    @media screen and (max-width: $media-mobile) {
+      margin-top: $margin-default;
+      margin-left: 0;
+    }
+  }
+}

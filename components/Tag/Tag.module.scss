@@ -6,6 +6,12 @@
   border: 1px solid transparent;
   border-radius: 20px;
 
+  a {
+    display: inline-block;
+    padding: 5px 12px;
+    transition: color $transition-time;
+  }
+
   & + & {
     margin-left: 5px;
   }
@@ -22,44 +28,69 @@
 
   &.ghost {
     border: 1px solid $color-grey-light;
+
+    a:link,
+    a:visited {
+      color: $color-black;
+    }
   }
 
   &.red {
     background-color: $color-electric-red;
     color: $color-white;
     font-weight: bold;
+
+    a:link,
+    a:visited {
+      color: $color-white;
+    }
   }
 
   &.grey {
     background-color: $color-light-steel-blue;
     color: $color-white;
     font-weight: bold;
+
+    a:link,
+    a:visited {
+      color: $color-white;
+    }
   }
 
   &.green {
     background-color: $color-green-light;
     color: $color-green;
     font-weight: bold;
+
+    a:link,
+    a:visited {
+      color: $color-green;
+    }
   }
 
   &.primary {
     border: 1px solid $color-primary;
     color: $color-primary;
+
+    a:link,
+    a:visited {
+      color: $color-primary;
+    }
   }
 
   &.link {
     padding: 0;
     transition: color $transition-time, background-color $transition-time, border-color $transition-time;
 
-    a {
-      display: inline-block;
-      padding: 5px 12px;
-    }
-
     &.ghost {
       &:hover {
         background-color: $color-primary;
         color: $color-white;
+
+        a:link,
+        a:visited {
+          color: $color-white;
+        }
       }
     }
 
@@ -74,6 +105,11 @@
         border-color: $color-primary;
         background-color: transparent;
         color: $color-primary;
+
+        a:link,
+        a:visited {
+          color: $color-primary;
+        }
       }
     }
 
@@ -81,6 +117,11 @@
       &:hover {
         background-color: $color-primary;
         color: $color-white;
+
+        a:link,
+        a:visited {
+          color: $color-white;
+        }
       }
     }
 
@@ -88,6 +129,11 @@
       &:hover {
         background-color: $color-primary;
         color: $color-white;
+
+        a:link,
+        a:visited {
+          color: $color-white;
+        }
       }
     }
   }

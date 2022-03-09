@@ -1,8 +1,10 @@
 import { HeaderProps } from "./Header.props";
+import cn from "classnames";
+import styles from "./Header.module.scss";
 
-export const Header = (props: HeaderProps) => {
+export const Header = ({ className, ...props }: HeaderProps) => {
 	return (
-		<header {...props}>
+		<header className={cn(styles.header, className)} {...props}>
 			<h3>Header</h3>
 		</header>
 	);

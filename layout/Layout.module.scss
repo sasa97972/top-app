@@ -3,6 +3,7 @@
 .wrapper {
   display: grid;
   min-height: 100vh;
+  gap: 0 $gap-default;
   grid-template-areas:
     ". header header ."
     ". sidebar body ."
@@ -25,6 +26,7 @@
 
   @media screen and (max-width: $media-mobile) {
     display: block;
+    padding: 0 $gap-mobile;
   }
 }
 
@@ -38,6 +40,10 @@
 
 .body {
   grid-area: body;
+
+  @media screen and (max-width: $media-mobile) {
+    padding: 0 $gap-mobile;
+  }
 }
 
 .footer {
