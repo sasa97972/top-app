@@ -43,6 +43,7 @@
     "space-before-function-paren": ["error", "never"],
     "space-in-parens": "error",
     "spaced-comment": "error",
+    "template-curly-spacing": ["error", "never"],
     "quotes": ["error", "double"]
   }
 }
