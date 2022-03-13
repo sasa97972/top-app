@@ -1,8 +1,13 @@
 import { Button, Heading, Paragraph, Rating, Tag } from "../components";
+import { HOME_CATEGORY, LOCAL_API_URL } from "../config";
 import { ReactElement, useState } from "react";
+import { GetStaticProps } from "next";
+import { IHomeProps } from "../interfaces/home.interface";
+import { IMenuItem } from "../interfaces/menu.interface";
 import { Layout } from "../layout/";
+import axios from "axios";
 
-export default function Home() {
+export default function Home({ menu }: IHomeProps) {
 	const [rating, setRating] = useState<number>(3);
 
 	const handleRatingChange = (rating: number): void => {
@@ -52,6 +57,11 @@ export default function Home() {
 			<div>
 				<Rating rating={2} />
 			</div>
+			<ul>
+				{menu.map(item =>
+					<li key={item._id.secondCategory}>{item._id.secondCategory}</li>
+				)}
+			</ul>
 		</>
 	);
 }
@@ -61,3 +71,16 @@ Home.getLayout = (page: ReactElement) => (
 		{page}
 	</Layout>
 );
+
+export const getStaticProps: GetStaticProps<IHomeProps> = async() => {
+	const { data: menu } = await axios.post<IMenuItem[]>(`${LOCAL_API_URL}/menu.php`, {
+		category: HOME_CATEGORY,
+	});
+
+	return {
+		props: {
+			category: HOME_CATEGORY,
+			menu,
+		},
+	};
+};
