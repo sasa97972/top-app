@@ -1,5 +1,5 @@
+import { API_URL, DEFAULT_CATEGORY } from "../config";
 import { Button, Heading, Paragraph, Rating, Tag } from "../components";
-import { HOME_CATEGORY, LOCAL_API_URL } from "../config";
 import { ReactElement, useState } from "react";
 import { GetStaticProps } from "next";
 import { IHomeProps } from "../interfaces/home.interface";
@@ -73,13 +73,13 @@ Home.getLayout = (page: ReactElement) => (
 );
 
 export const getStaticProps: GetStaticProps<IHomeProps> = async() => {
-	const { data: menu } = await axios.post<IMenuItem[]>(`${LOCAL_API_URL}/menu.php`, {
-		category: HOME_CATEGORY,
+	const { data: menu } = await axios.post<IMenuItem[]>(`${API_URL}/top-page/find`, {
+		firstCategory: DEFAULT_CATEGORY,
 	});
 
 	return {
 		props: {
-			category: HOME_CATEGORY,
+			category: DEFAULT_CATEGORY,
 			menu,
 		},
 	};

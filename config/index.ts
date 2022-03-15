@@ -1,2 +1,3 @@
-export const HOME_CATEGORY = 0;
-export const LOCAL_API_URL = "http://top-app-mock.local";
+export const DEFAULT_CATEGORY = 0;
+export const DEFAULT_LIMIT = 10;
+export const API_URL = "https://courses-top.ru/api";
