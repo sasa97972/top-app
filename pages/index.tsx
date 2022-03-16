@@ -1,13 +1,13 @@
 import { API_URL, DEFAULT_CATEGORY } from "../config";
 import { Button, Heading, Paragraph, Rating, Tag } from "../components";
-import { ReactElement, useState } from "react";
 import { GetStaticProps } from "next";
 import { IHomeProps } from "../interfaces/home.interface";
 import { IMenuItem } from "../interfaces/menu.interface";
-import { Layout } from "../layout/";
 import axios from "axios";
+import { useState } from "react";
+import { withLayout } from "../layout/";
 
-export default function Home({ menu }: IHomeProps) {
+export default function Home() {
 	const [rating, setRating] = useState<number>(3);
 
 	const handleRatingChange = (rating: number): void => {
@@ -57,20 +57,11 @@ export default function Home({ menu }: IHomeProps) {
 			<div>
 				<Rating rating={2} />
 			</div>
-			<ul>
-				{menu.map(item =>
-					<li key={item._id.secondCategory}>{item._id.secondCategory}</li>
-				)}
-			</ul>
 		</>
 	);
 }
 
-Home.getLayout = (page: ReactElement) => (
-	<Layout>
-		{page}
-	</Layout>
-);
+Home.getLayout = withLayout;
 
 export const getStaticProps: GetStaticProps<IHomeProps> = async() => {
 	const { data: menu } = await axios.post<IMenuItem[]>(`${API_URL}/top-page/find`, {

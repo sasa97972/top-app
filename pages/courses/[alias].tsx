@@ -5,21 +5,14 @@ import { ICourseProps } from "../../interfaces/course.interface";
 import { IMenuItem } from "../../interfaces/menu.interface";
 import { IPage } from "../../interfaces/page.interface";
 import { IProduct } from "../../interfaces/product.interface";
-import { Layout } from "../../layout/";
 import { ParsedUrlQuery } from "querystring";
-import { ReactElement } from "react";
 import axios from "axios";
+import { withLayout } from "../../layout/";
 
-export default function Course({ menu, page, products }: ICourseProps) {
+export default function Course({ page, products }: ICourseProps) {
 	return (
 		<>
 			<Heading tag="h1">Курс</Heading>
-			<Heading tag="h2">Меню</Heading>
-			<ul>
-				{menu?.map(item =>
-					<li key={item._id.secondCategory}>{item._id.secondCategory}</li>
-				)}
-			</ul>
 			<Heading tag="h2">Страница</Heading>
 			<p>{page?.title}</p>
 			<Heading tag="h2">Продукты</Heading>
@@ -32,11 +25,7 @@ export default function Course({ menu, page, products }: ICourseProps) {
 	);
 }
 
-Course.getLayout = (page: ReactElement) => (
-	<Layout>
-		{page}
-	</Layout>
-);
+Course.getLayout = withLayout;
 
 export const getStaticProps: GetStaticProps<ICourseProps> = async({ params }: GetStaticPropsContext<ParsedUrlQuery>) => {
 	if (!params) {

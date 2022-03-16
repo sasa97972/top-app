@@ -1,9 +1,4 @@
-enum TopLevelCategory {
-    Courses,
-    Services,
-    Books,
-    Products,
-}
+import { TopLevelCategory } from "../enums/category.enum";
 
 interface IAdvantage {
     title: string;
