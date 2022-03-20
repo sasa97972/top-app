@@ -1,1 +1,74 @@
 @import "styles/config/variables";
+
+.firstLevel {
+  display: grid;
+  align-items: center;
+  margin-bottom: $margin-default;
+  color: $color-grey-alternate;
+  font-size: 18px;
+  font-weight: 500;
+  gap: $margin-default;
+  grid-template-columns: 24px 1fr;
+  line-height: 25px;
+  transition: color $transition-time;
+
+  svg {
+    fill: currentColor;
+    transition: fill $transition-time;
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &.active {
+    margin-bottom: calc(#{$margin-default} - 5px);
+    color: $color-primary;
+  }
+}
+
+.secondBlock {
+  padding-left: 32px;
+  border-left: 1px solid $color-gainsboro;
+  margin-bottom: 24px;
+  margin-left: 12px;
+}
+
+.secondLevel {
+  color: $color-grey-alternate;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 16px;
+  text-transform: uppercase;
+
+  & + & {
+    margin-top: calc(#{$margin-default} / 2);
+  }
+}
+
+.thirdLevel {
+  display: block;
+  color: $color-grey-alternate;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+  transition: color $transition-time;
+
+  &.active {
+    color: $color-primary;
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  & + & {
+    margin-top: 10px;
+  }
+}
+
+.thirdLevelNav {
+  margin-top: 13px;
+  margin-bottom: $margin-default;
+}

@@ -1,1 +1,7 @@
 @import "styles/config/variables";
+
+.sidebar {
+  display: grid;
+  padding: $gap-default 0;
+  row-gap: $margin-default;
+}

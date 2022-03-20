@@ -39,6 +39,7 @@
 }
 
 .body {
+  padding: $gap-default 0;
   grid-area: body;
 
   @media screen and (max-width: $media-mobile) {

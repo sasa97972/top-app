@@ -1,14 +1,14 @@
 import { AppContext } from "../../context/app.context";
+import { MenuBody } from "./MenuBody";
+import styles from "./Menu.module.scss";
 import { useContext } from "react";
 
 export const Menu = () => {
-	const { menu } = useContext(AppContext);
+	const { category, menu } = useContext(AppContext);
 
 	return (
-		<ul>
-			{menu.map(item =>
-				<li key={item._id.secondCategory}>{item._id.secondCategory}</li>
-			)}
-		</ul>
+		<nav className={styles.menu}>
+			<MenuBody category={category} menu={menu} />
+		</nav>
 	);
 };
