@@ -1,3 +1,3 @@
-import { DetailedHTMLProps, HTMLAttributes } from "react";
+import { DetailedHTMLProps, HTMLAttributes, PropsWithoutRef } from "react";
 
-export interface SidebarProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
+export interface SidebarProps extends PropsWithoutRef<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>> {}

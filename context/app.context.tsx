@@ -6,7 +6,6 @@ import { TopLevelCategory } from "../enums/category.enum";
 export interface IAppContext {
     category: TopLevelCategory,
     menu: IMenuItem[],
-    setMenu?: (newMenu: IMenuItem[]) => void,
 }
 
 export const AppContext = createContext<IAppContext>({
