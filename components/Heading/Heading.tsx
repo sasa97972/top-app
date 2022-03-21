@@ -1,7 +1,7 @@
-import { HeadingProps } from "./Heading.props";
 import { createElement } from "react";
+import { HeadingProps } from "./Heading.props";
 import styles from "./Heading.module.scss";
 
-export const Heading = ({ children, tag }: HeadingProps): JSX.Element => {
-	return createElement(tag, { className: styles[tag] }, children);
-};
+export function Heading({ children, tag }: HeadingProps): JSX.Element {
+    return createElement(tag, { className: styles[tag] }, children);
+}

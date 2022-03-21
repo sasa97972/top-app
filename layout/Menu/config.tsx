@@ -6,28 +6,28 @@ import ServicesIcon from "./icons/services.svg";
 import { TopLevelCategory } from "../../enums/category.enum";
 
 export const topLevelMenu: ITopLevelItem[] = [
-	{
-		icon: <CoursesIcon />,
-		id: TopLevelCategory.Courses,
-		name: "Курсы",
-		route: "courses",
-	},
-	{
-		icon: <ServicesIcon />,
-		id: TopLevelCategory.Services,
-		name: "Сервисы",
-		route: "services",
-	},
-	{
-		icon: <BooksIcon />,
-		id: TopLevelCategory.Books,
-		name: "Книги",
-		route: "books",
-	},
-	{
-		icon: <ProductsIcon />,
-		id: TopLevelCategory.Products,
-		name: "Продукты",
-		route: "products",
-	},
+    {
+        icon: <CoursesIcon />,
+        id: TopLevelCategory.Courses,
+        name: "Курсы",
+        route: "courses",
+    },
+    {
+        icon: <ServicesIcon />,
+        id: TopLevelCategory.Services,
+        name: "Сервисы",
+        route: "services",
+    },
+    {
+        icon: <BooksIcon />,
+        id: TopLevelCategory.Books,
+        name: "Книги",
+        route: "books",
+    },
+    {
+        icon: <ProductsIcon />,
+        id: TopLevelCategory.Products,
+        name: "Продукты",
+        route: "products",
+    },
 ];

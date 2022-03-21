@@ -1,4 +1,6 @@
-import { DetailedHTMLProps, HTMLAttributes, PropsWithoutRef, ReactNode } from "react";
+import {
+    DetailedHTMLProps, HTMLAttributes, PropsWithoutRef, ReactNode,
+} from "react";
 
 export interface TagProps extends PropsWithoutRef<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>>{
     children: ReactNode;
