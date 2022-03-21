@@ -2,11 +2,11 @@ import { API_URL, DEFAULT_CATEGORY, DEFAULT_LIMIT } from "../../config";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { Heading } from "../../components";
 import { ICourseProps } from "../../interfaces/course.interface";
-import { IMenuItem } from "../../interfaces/menu.interface";
 import { IPage } from "../../interfaces/page.interface";
 import { IProduct } from "../../interfaces/product.interface";
 import { ParsedUrlQuery } from "querystring";
 import axios from "axios";
+import { getMenuData } from "../../helpers/api";
 import { withLayout } from "../../layout/";
 
 export default function Course({ page, products }: ICourseProps) {
@@ -34,9 +34,7 @@ export const getStaticProps: GetStaticProps<ICourseProps> = async({ params }: Ge
 		};
 	}
 
-	const { data: menu } = await axios.post<IMenuItem[]>(`${API_URL}/top-page/find`, {
-		firstCategory: DEFAULT_CATEGORY,
-	});
+	const { data: menu } = await getMenuData(DEFAULT_CATEGORY);
 	const { data: page } = await axios.get<IPage>(`${API_URL}/top-page/byAlias/${params.alias}`);
 	const { data: products } = await axios.post<IProduct[]>(`${API_URL}/product/find`, {
 		category: page.category,
@@ -54,9 +52,7 @@ export const getStaticProps: GetStaticProps<ICourseProps> = async({ params }: Ge
 };
 
 export const getStaticPaths: GetStaticPaths = async() => {
-	const { data: menu } = await axios.post<IMenuItem[]>(`${API_URL}/top-page/find`, {
-		firstCategory: DEFAULT_CATEGORY,
-	});
+	const { data: menu } = await getMenuData(DEFAULT_CATEGORY);
 
 	return {
 		fallback: false,

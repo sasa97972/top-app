@@ -1,4 +1,4 @@
-import { PropsWithChildren, createContext, useState } from "react";
+import { PropsWithChildren, createContext } from "react";
 import { DEFAULT_CATEGORY } from "../config";
 import { IMenuItem } from "../interfaces/menu.interface";
 import { TopLevelCategory } from "../enums/category.enum";
@@ -14,17 +14,11 @@ export const AppContext = createContext<IAppContext>({
 	menu: [],
 });
 
-export const AppContextProvider = ({ category, children, menu }: PropsWithChildren<IAppContext>): JSX.Element => {
-	const [menuState, setMenuState] = useState<IMenuItem[]>(menu);
-	const setMenu = (newMenu: IMenuItem[]) => setMenuState(newMenu);
-
-	return (
-		<AppContext.Provider value={{
-			category,
-			menu: menuState,
-			setMenu,
-		}}>
-			{ children }
-		</AppContext.Provider>
-	);
-};
+export const AppContextProvider = ({ category, children, menu }: PropsWithChildren<IAppContext>): JSX.Element =>
+	<AppContext.Provider value={{
+		category,
+		menu,
+	}}>
+		{ children }
+	</AppContext.Provider>
+;
