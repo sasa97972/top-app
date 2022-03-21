@@ -45,6 +45,10 @@
   & + & {
     margin-top: calc(#{$margin-default} / 2);
   }
+
+  &.active {
+    color: $color-primary;
+  }
 }
 
 .thirdLevel {
@@ -69,6 +73,11 @@
 }
 
 .thirdLevelNav {
+  display: none;
   margin-top: 13px;
   margin-bottom: $margin-default;
+
+  &.opened {
+    display: block;
+  }
 }

@@ -1,7 +1,12 @@
 @import "styles/config/variables";
 
 .sidebar {
+  position: sticky;
+  top: 0;
   display: grid;
+  overflow: auto;
+  height: calc(100vh - 70px - #{$margin-default * 2});
+  min-height: 200px;
   padding: $gap-default 0;
   row-gap: $margin-default;
 }

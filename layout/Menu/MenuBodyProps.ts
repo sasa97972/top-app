@@ -11,6 +11,13 @@ export interface IMenuSecondLevel {
     route: string,
 }
 
+export interface IMenuSecondItem {
+    isOpenedDefault: boolean,
+    name: string,
+    pages: IPageItem[],
+    route: string,
+}
+
 export interface IMenuThirdLevel {
     pages: IPageItem[],
     route: string,
