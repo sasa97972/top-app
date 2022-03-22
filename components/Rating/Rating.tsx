@@ -1,10 +1,10 @@
+import cn from "classnames";
 import {
     KeyboardEvent, MouseEvent, useCallback, useEffect, useState,
 } from "react";
-import cn from "classnames";
-import IconStar from "./star.svg";
-import { RatingProps } from "./Rating.props";
 import styles from "./Rating.module.scss";
+import { RatingProps } from "./Rating.props";
+import IconStar from "./star.svg";
 
 const MAX_RATING = 5;
 

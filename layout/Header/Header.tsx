@@ -1,6 +1,6 @@
 import cn from "classnames";
-import { HeaderProps } from "./Header.props";
 import styles from "./Header.module.scss";
+import { HeaderProps } from "./Header.props";
 
 export function Header({ className, ...props }: HeaderProps) {
     return (

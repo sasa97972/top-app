@@ -1,6 +1,6 @@
 import cn from "classnames";
-import { TagProps } from "./Tag.props";
 import styles from "./Tag.module.scss";
+import { TagProps } from "./Tag.props";
 
 export function Tag({
     children,

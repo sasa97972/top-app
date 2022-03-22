@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { Menu } from "../Menu";
-import { SidebarProps } from "./Sidebar.props";
 import styles from "./Sidebar.module.scss";
+import { SidebarProps } from "./Sidebar.props";
 
 export function Sidebar({ className, ...props }: SidebarProps) {
     return (

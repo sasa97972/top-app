@@ -1,9 +1,9 @@
+import { TopLevelCategory } from "../../enums/category.enum";
+import { ITopLevelItem } from "../../interfaces/menu.interface";
 import BooksIcon from "./icons/books.svg";
 import CoursesIcon from "./icons/courses.svg";
-import { ITopLevelItem } from "../../interfaces/menu.interface";
 import ProductsIcon from "./icons/products.svg";
 import ServicesIcon from "./icons/services.svg";
-import { TopLevelCategory } from "../../enums/category.enum";
 
 export const topLevelMenu: ITopLevelItem[] = [
     {

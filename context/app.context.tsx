@@ -1,7 +1,7 @@
 import { PropsWithChildren, createContext, useMemo } from "react";
 import { DEFAULT_CATEGORY } from "../config";
-import { IMenuItem } from "../interfaces/menu.interface";
 import { TopLevelCategory } from "../enums/category.enum";
+import { IMenuItem } from "../interfaces/menu.interface";
 
 export interface IAppContext {
     category: TopLevelCategory,

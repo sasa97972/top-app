@@ -4,8 +4,8 @@ import {
     Button, Heading, Paragraph, Rating, Tag,
 } from "../components";
 import { DEFAULT_CATEGORY } from "../config";
-import { IHomeProps } from "../interfaces/home.interface";
 import { getMenuData } from "../helpers/api";
+import { IHomeProps } from "../interfaces/home.interface";
 import { withLayout } from "../layout";
 
 function Home() {

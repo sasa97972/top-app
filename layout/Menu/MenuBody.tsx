@@ -1,16 +1,16 @@
-import Link from "next/link";
 import classNames from "classnames";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { getParsedPathName } from "../../helpers/router";
+import { topLevelMenu } from "./config";
+import styles from "./Menu.module.scss";
 import {
     IMenuBodyProps,
     IMenuSecondItem,
     IMenuSecondLevel,
     IMenuThirdLevel,
 } from "./MenuBodyProps";
-import { getParsedPathName } from "../../helpers/router";
-import styles from "./Menu.module.scss";
-import { topLevelMenu } from "./config";
 
 export function MenuBody({ category, menu }: IMenuBodyProps) {
     return (

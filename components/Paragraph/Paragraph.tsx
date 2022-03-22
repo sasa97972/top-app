@@ -1,6 +1,6 @@
 import cn from "classnames";
-import { ParagraphProps } from "./Paragraph.props";
 import styles from "./Paragraph.module.scss";
+import { ParagraphProps } from "./Paragraph.props";
 
 export function Paragraph({
     children, size = "m", className, ...props

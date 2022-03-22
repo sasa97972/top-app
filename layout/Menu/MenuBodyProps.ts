@@ -1,5 +1,5 @@
-import { IMenuItem, IPageItem } from "../../interfaces/menu.interface";
 import { TopLevelCategory } from "../../enums/category.enum";
+import { IMenuItem, IPageItem } from "../../interfaces/menu.interface";
 
 export interface IMenuBodyProps {
     category: TopLevelCategory,
