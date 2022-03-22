@@ -7,6 +7,23 @@
   overflow: auto;
   height: calc(100vh - 70px - #{$margin-default * 2});
   min-height: 200px;
+  align-content: start;
   padding: $gap-default 0;
+  grid-auto-rows: max-content;
   row-gap: $margin-default;
+}
+
+.logoLink {
+  display: inline-block;
+  font-size: 0;
+  transition: transform 0.1s;
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.logo {
+  display: inline-block;
+  fill: $color-primary;
 }
