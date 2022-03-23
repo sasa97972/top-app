@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
-import TopPage from "../../components/page-components/TopPage/TopPage";
+import { TopPage } from "../../components/page-components";
 import { DEFAULT_LIMIT } from "../../config";
 import { getMenuData, getPageData, getProductsData } from "../../helpers/api";
 import { ICourseProps } from "../../interfaces/course.interface";

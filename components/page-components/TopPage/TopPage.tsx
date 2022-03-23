@@ -1,7 +1,7 @@
 import { Heading } from "../../Heading";
 import { ITopPageProps } from "./TopPage.props";
 
-export default function TopPage({ category, page, products }: ITopPageProps) {
+export function TopPage({ category, page, products }: ITopPageProps) {
     return (
         <>
             <Heading tag="h1">{category}</Heading>
