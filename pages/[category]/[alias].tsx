@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
-import { Heading } from "../../components";
+import TopPage from "../../components/page-components/TopPage/TopPage";
 import { DEFAULT_LIMIT } from "../../config";
 import { getMenuData, getPageData, getProductsData } from "../../helpers/api";
 import { ICourseProps } from "../../interfaces/course.interface";
@@ -8,21 +8,11 @@ import { IPagePath } from "../../interfaces/paths.interface";
 import { withLayout } from "../../layout";
 import { topLevelMenu } from "../../layout/Menu/config";
 
-export default function Course({ categoryName, page, products }: ICourseProps) {
-    return (
-        <>
-            <Heading tag="h1">{categoryName}</Heading>
-            <Heading tag="h2">Страница</Heading>
-            <p>{page?.title}</p>
-            <Heading tag="h2">Продукты</Heading>
-            <ul>
-                {products?.map((item) => <li key={item._id}>{item.title}</li>)}
-            </ul>
-        </>
-    );
+export default function Page({ category, page, products }: ICourseProps) {
+    return <TopPage category={category} page={page} products={products} />;
 }
 
-Course.getLayout = withLayout;
+Page.getLayout = withLayout;
 
 export const getStaticProps: GetStaticProps<ICourseProps> = async ({ params }: GetStaticPropsContext<ParsedUrlQuery>) => {
     const topLevelItem = topLevelMenu.find((menuItem) => menuItem.route === params?.category);

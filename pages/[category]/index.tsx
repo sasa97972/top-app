@@ -6,7 +6,7 @@ import { ICategoryProps } from "../../interfaces/category.interface";
 import { withLayout } from "../../layout";
 import { topLevelMenu } from "../../layout/Menu/config";
 
-function CourseIndex({ categoryName }: ICategoryProps) {
+function CategoryIndex({ categoryName }: ICategoryProps) {
     return (
         <Heading tag="h1">
             Главная страница раздела
@@ -16,9 +16,9 @@ function CourseIndex({ categoryName }: ICategoryProps) {
     );
 }
 
-CourseIndex.getLayout = withLayout;
+CategoryIndex.getLayout = withLayout;
 
-export default CourseIndex;
+export default CategoryIndex;
 
 export const getStaticProps: GetStaticProps<ICategoryProps> = async ({ params }: GetStaticPropsContext<ParsedUrlQuery>) => {
     const topLevelItem = topLevelMenu.find((menuItem) => menuItem.route === params?.category);
