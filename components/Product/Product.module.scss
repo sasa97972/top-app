@@ -1,0 +1,15 @@
+@import "styles/config/variables";
+
+.product {
+  padding: $gap-default;
+
+  & + & {
+    margin-top: $margin-default;
+  }
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 27px;
+}

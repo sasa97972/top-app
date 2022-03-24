@@ -1,1 +1,17 @@
 @import "styles/config/variables";
+
+.header {
+  display: grid;
+  align-items: center;
+  margin-bottom: $margin-default;
+  gap: $margin-default;
+  grid-template-columns: max-content max-content auto;
+}
+
+.toolbar {
+  justify-self: end;
+}
+
+.productsList {
+  margin-bottom: 50px;
+}

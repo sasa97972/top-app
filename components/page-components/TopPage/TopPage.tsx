@@ -1,16 +1,32 @@
-import { Heading } from "../../Heading";
+import {
+    Heading,
+    Product,
+    Tag,
+    Vacancies,
+} from "../..";
+import styles from "./TopPage.module.scss";
 import { ITopPageProps } from "./TopPage.props";
 
-export function TopPage({ category, page, products }: ITopPageProps) {
+export function TopPage({ page, products }: ITopPageProps) {
     return (
-        <>
-            <Heading tag="h1">{category}</Heading>
-            <Heading tag="h2">Страница</Heading>
-            <p>{page?.title}</p>
-            <Heading tag="h2">Продукты</Heading>
-            <ul>
-                {products?.map((item) => <li key={item._id}>{item.title}</li>)}
-            </ul>
-        </>
+        <article>
+            <header className={styles.header}>
+                <Heading tag="h1">{page.title}</Heading>
+                {products && <Tag color="grey" size="m">{products.length}</Tag>}
+                <span className={styles.toolbar}>Сортировка</span>
+            </header>
+            <div className={styles.productsList}>
+                { products && products.map((product) => (
+                    <Product key={product._id} title={product.title} />
+                )) }
+            </div>
+            <Vacancies
+                category={page.category}
+                count={(page.hh.count)}
+                juniorSalary={page.hh.juniorSalary}
+                middleSalary={page.hh.middleSalary}
+                seniorSalary={page.hh.seniorSalary}
+            />
+        </article>
     );
 }

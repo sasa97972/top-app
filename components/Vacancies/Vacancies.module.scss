@@ -1,0 +1,47 @@
+@import "styles/config/variables";
+
+.vacanciesTitle {
+  display: grid;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 25px;
+  gap: $margin-default;
+  grid-template-columns: auto auto;
+}
+
+.vacanciesRow {
+  display: grid;
+  gap: $gap-default;
+  grid-template-columns: 260px 1fr;
+}
+
+.cardRow {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cardSection {
+  display: grid;
+
+  & + & {
+    border-left: 1px solid $color-grey-light;
+  }
+}
+
+.cardText {
+  display: inline-block;
+
+  &.accent {
+    margin-top: 12px;
+    color: $color-primary;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 49px;
+  }
+
+  &.big {
+    margin-top: 8px;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 35px;
+  }
+}

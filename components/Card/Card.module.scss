@@ -1,0 +1,17 @@
+@import "styles/config/variables";
+
+.card {
+  display: grid;
+  padding: $margin-default;
+  background: $color-white;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 27px;
+}
+
+.alignCenter {
+  place-content: center;
+  text-align: center;
+}
