@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { TopPage } from "../../components/page-components";
 import { DEFAULT_LIMIT } from "../../config";
-import { getMenuData, getPageData, getProductsData } from "../../helpers/api";
+import { getMenuData, getPageData, getProductsData } from "../../helpers";
 import { ICourseProps } from "../../interfaces/course.interface";
 import { IPagePath } from "../../interfaces/paths.interface";
 import { withLayout } from "../../layout";

@@ -2,7 +2,7 @@ import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { getParsedPathName } from "../../helpers/router";
+import { getParsedPathName } from "../../helpers";
 import { topLevelMenu } from "./config";
 import styles from "./Menu.module.scss";
 import {

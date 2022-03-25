@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { Heading } from "../../components";
-import { getMenuData } from "../../helpers/api";
+import { getMenuData } from "../../helpers";
 import { ICategoryProps } from "../../interfaces/category.interface";
 import { withLayout } from "../../layout";
 import { topLevelMenu } from "../../layout/Menu/config";

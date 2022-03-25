@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { splitNumberByDecimals } from "../../helpers";
 import { Card } from "../Card";
 import { Heading } from "../Heading";
 import { Tag } from "../Tag";
@@ -34,7 +35,7 @@ export function Vacancies({
                     <div className={styles.cardSection}>
                         <span className={styles.cardText}>Начальный</span>
                         <span className={classNames(styles.cardText, styles.big)}>
-                            {juniorSalary.toLocaleString("ru")}
+                            {splitNumberByDecimals(juniorSalary)}
                             {" "}
                             ₽
                         </span>
@@ -47,7 +48,7 @@ export function Vacancies({
                     <div className={styles.cardSection}>
                         <span className={styles.cardText}>Средний</span>
                         <span className={classNames(styles.cardText, styles.big)}>
-                            {middleSalary.toLocaleString("ru")}
+                            {splitNumberByDecimals(middleSalary)}
                             {" "}
                             ₽
                         </span>
@@ -60,7 +61,7 @@ export function Vacancies({
                     <div className={styles.cardSection}>
                         <span className={styles.cardText}>Профессионал</span>
                         <span className={classNames(styles.cardText, styles.big)}>
-                            {seniorSalary.toLocaleString("ru")}
+                            {splitNumberByDecimals(seniorSalary)}
                             {" "}
                             ₽
                         </span>
