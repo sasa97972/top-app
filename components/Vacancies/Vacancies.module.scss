@@ -26,7 +26,7 @@
 }
 
 .cardRow {
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
 
   @media screen and (max-width: $media-tablet) {
     gap: $margin-mobile;

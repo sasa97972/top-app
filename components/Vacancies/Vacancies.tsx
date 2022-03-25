@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { splitNumberByDecimals } from "../../helpers";
+import { formatSalary } from "../../helpers";
 import { Card } from "../Card";
 import { Heading } from "../Heading";
 import { Tag } from "../Tag";
@@ -35,9 +35,7 @@ export function Vacancies({
                     <div className={styles.cardSection}>
                         <span className={styles.cardText}>Начальный</span>
                         <span className={classNames(styles.cardText, styles.big)}>
-                            {splitNumberByDecimals(juniorSalary)}
-                            {" "}
-                            ₽
+                            {formatSalary(juniorSalary)}
                         </span>
                         <div className={styles.rate}>
                             <RateIcon className={styles.filled} />
@@ -48,9 +46,7 @@ export function Vacancies({
                     <div className={styles.cardSection}>
                         <span className={styles.cardText}>Средний</span>
                         <span className={classNames(styles.cardText, styles.big)}>
-                            {splitNumberByDecimals(middleSalary)}
-                            {" "}
-                            ₽
+                            {formatSalary(middleSalary)}
                         </span>
                         <div className={styles.rate}>
                             <RateIcon className={styles.filled} />
@@ -61,9 +57,7 @@ export function Vacancies({
                     <div className={styles.cardSection}>
                         <span className={styles.cardText}>Профессионал</span>
                         <span className={classNames(styles.cardText, styles.big)}>
-                            {splitNumberByDecimals(seniorSalary)}
-                            {" "}
-                            ₽
+                            {formatSalary(seniorSalary)}
                         </span>
                         <div className={styles.rate}>
                             <RateIcon className={styles.filled} />
