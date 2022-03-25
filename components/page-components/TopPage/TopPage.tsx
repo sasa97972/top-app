@@ -20,13 +20,15 @@ export function TopPage({ page, products }: ITopPageProps) {
                     <Product key={product._id} title={product.title} />
                 )) }
             </div>
-            <Vacancies
-                category={page.category}
-                count={(page.hh.count)}
-                juniorSalary={page.hh.juniorSalary}
-                middleSalary={page.hh.middleSalary}
-                seniorSalary={page.hh.seniorSalary}
-            />
+            {page.hh && (
+                <Vacancies
+                    category={page.category}
+                    count={(page.hh.count)}
+                    juniorSalary={page.hh.juniorSalary}
+                    middleSalary={page.hh.middleSalary}
+                    seniorSalary={page.hh.seniorSalary}
+                />
+            )}
         </article>
     );
 }
