@@ -16,9 +16,9 @@ export function TopPage({ page, products }: ITopPageProps) {
                 <span className={styles.toolbar}>Сортировка</span>
             </header>
             <div className={styles.productsList}>
-                { products && products.map((product) => (
+                {products && products.map((product) => (
                     <Product key={product._id} title={product.title} />
-                )) }
+                ))}
             </div>
             {page.hh && (
                 <Vacancies

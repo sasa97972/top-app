@@ -1,3 +1,4 @@
+import Error from "next/error";
 import { ReactElement } from "react";
 import { AppContextProvider } from "../context/app.context";
 import { Footer } from "./Footer";
@@ -20,9 +21,13 @@ function Layout({ children }: LayoutProps) {
 }
 
 export const withLayout = (page: ReactElement) => (
-    <AppContextProvider category={page.props.category} menu={page.props.menu}>
-        <Layout>
-            {page}
-        </Layout>
-    </AppContextProvider>
+    page.props.category !== undefined && page.props.menu
+        ? (
+            <AppContextProvider category={page.props.category} menu={page.props.menu}>
+                <Layout>
+                    {page}
+                </Layout>
+            </AppContextProvider>
+        )
+        : <Error statusCode={404} />
 );
