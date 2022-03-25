@@ -18,7 +18,7 @@
 .vacanciesRow {
   display: grid;
   gap: $gap-default;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: minmax(210px, 260px) minmax(640px, 1fr);
 
   @media screen and (max-width: $media-tablet) {
     grid-template-columns: 1fr;
