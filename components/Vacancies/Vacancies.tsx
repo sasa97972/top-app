@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { Card } from "../Card";
 import { Heading } from "../Heading";
 import { Tag } from "../Tag";
+import RateIcon from "./icons/star.svg";
 import styles from "./Vacancies.module.scss";
 import { IVacanciesProps } from "./Vacancies.props";
 
@@ -37,6 +38,11 @@ export function Vacancies({
                             {" "}
                             ₽
                         </span>
+                        <div className={styles.rate}>
+                            <RateIcon className={styles.filled} />
+                            <RateIcon />
+                            <RateIcon />
+                        </div>
                     </div>
                     <div className={styles.cardSection}>
                         <span className={styles.cardText}>Средний</span>
@@ -45,6 +51,11 @@ export function Vacancies({
                             {" "}
                             ₽
                         </span>
+                        <div className={styles.rate}>
+                            <RateIcon className={styles.filled} />
+                            <RateIcon className={styles.filled} />
+                            <RateIcon />
+                        </div>
                     </div>
                     <div className={styles.cardSection}>
                         <span className={styles.cardText}>Профессионал</span>
@@ -53,6 +64,11 @@ export function Vacancies({
                             {" "}
                             ₽
                         </span>
+                        <div className={styles.rate}>
+                            <RateIcon className={styles.filled} />
+                            <RateIcon className={styles.filled} />
+                            <RateIcon className={styles.filled} />
+                        </div>
                     </div>
                 </Card>
             </div>
