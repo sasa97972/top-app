@@ -7,7 +7,7 @@ import { SidebarProps } from "./Sidebar.props";
 
 export function Sidebar({ className, ...props }: SidebarProps) {
     return (
-        <aside className={classNames(styles.sidebar, className)} {...props}>
+        <aside className={classNames(className, styles.sidebar)} {...props}>
             <Link href="/">
                 <a className={styles.logoLink}>
                     <Logo className={styles.logo} />

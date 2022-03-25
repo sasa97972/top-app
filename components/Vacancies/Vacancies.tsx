@@ -22,7 +22,7 @@ export function Vacancies({
                     {" "}
                     {category}
                 </Heading>
-                <Tag color="red" size="m">hh.ru</Tag>
+                <Tag className={styles.tag} color="red" size="m">hh.ru</Tag>
             </div>
             <div className={styles.vacanciesRow}>
                 <Card align="center">

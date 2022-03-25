@@ -6,10 +6,26 @@
   margin-bottom: $margin-default;
   gap: $margin-default;
   grid-template-columns: max-content max-content auto;
+
+  @media screen and (max-width: $media-tablet) {
+    grid-template-columns: [start] 1fr 1fr [end];
+  }
+}
+
+.title {
+  @media screen and (max-width: $media-tablet) {
+    grid-column: start / end;
+  }
 }
 
 .toolbar {
   justify-self: end;
+}
+
+.productCount {
+  @media screen and (max-width: $media-tablet) {
+    justify-self: start;
+  }
 }
 
 .productsList {

@@ -11,8 +11,8 @@ export function TopPage({ page, products }: ITopPageProps) {
     return (
         <article>
             <header className={styles.header}>
-                <Heading tag="h1">{page.title}</Heading>
-                {products && <Tag color="grey" size="m">{products.length}</Tag>}
+                <Heading className={styles.title} tag="h1">{page.title}</Heading>
+                {products && <Tag className={styles.productCount} color="grey" size="m">{products.length}</Tag>}
                 <span className={styles.toolbar}>Сортировка</span>
             </header>
             <div className={styles.productsList}>

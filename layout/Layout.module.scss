@@ -34,7 +34,7 @@
   grid-area: sidebar;
 
   @media screen and (max-width: $media-mobile) {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -43,7 +43,7 @@
   grid-area: body;
 
   @media screen and (max-width: $media-mobile) {
-    padding: 0 $gap-mobile;
+    padding: $gap-default $gap-mobile;
   }
 }
 

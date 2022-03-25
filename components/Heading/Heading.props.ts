@@ -1,6 +1,9 @@
-import { ReactNode } from "react";
+import {
+    DetailedHTMLProps,
+    HTMLAttributes,
+    PropsWithoutRef,
+} from "react";
 
-export interface HeadingProps {
-    tag: "h1" | "h2" | "h3";
-    children: ReactNode;
+export interface HeadingProps extends PropsWithoutRef<DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>> {
+    tag: "h1" | "h2" | "h3",
 }

@@ -1,10 +1,14 @@
 /* Dimensions */
 $min-content-width: 320px;
 $max-content-width: 1200px;
-$media-mobile: 765px;
 $margin-default: 20px;
+$margin-mobile: 10px;
 $gap-default: 30px;
 $gap-mobile: 20px;
+
+/* Breakpoints */
+$media-mobile: 765px;
+$media-tablet: 1200px;
 
 /* Colors */
 $color-black: #3B434E;

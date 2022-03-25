@@ -7,16 +7,31 @@
   margin-bottom: 25px;
   gap: $margin-default;
   grid-template-columns: auto auto;
+
+  @media screen and (max-width: $media-mobile) {
+    gap: $margin-mobile;
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
 }
 
 .vacanciesRow {
   display: grid;
   gap: $gap-default;
   grid-template-columns: 260px 1fr;
+
+  @media screen and (max-width: $media-tablet) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .cardRow {
   grid-template-columns: 1fr 1fr 1fr;
+
+  @media screen and (max-width: $media-tablet) {
+    gap: $margin-mobile;
+    grid-template-columns: 1fr;
+  }
 }
 
 .cardSection {
@@ -24,6 +39,12 @@
 
   & + & {
     border-left: 1px solid $color-grey-light;
+
+    @media screen and (max-width: $media-tablet) {
+      padding-top: $margin-mobile;
+      border-top: 1px solid $color-grey-light;
+      border-left: none;
+    }
   }
 }
 
@@ -43,5 +64,11 @@
     font-size: 26px;
     font-weight: 700;
     line-height: 35px;
+  }
+}
+
+.tag {
+  @media screen and (max-width: $media-mobile) {
+    grid-row: 1 / span 1;
   }
 }
