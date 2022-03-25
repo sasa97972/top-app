@@ -13,11 +13,11 @@ export function Button({
     return (
         <button
             type="button"
-            {...buttonProps}
             className={cn(styles.button, className, {
                 [styles.primary]: appearance === "primary",
                 [styles.secondary]: appearance === "secondary",
             })}
+            {...buttonProps}
         >
             {children}
             {arrow !== "none" && (

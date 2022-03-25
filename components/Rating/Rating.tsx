@@ -56,10 +56,10 @@ export function Rating({
 
     return (
         <div
-            {...props}
             className={cn(styles.rating, className)}
             onMouseLeave={isEditable ? setDefaultRating : undefined}
             onMouseOver={isEditable ? onMouseOver : undefined}
+            {...props}
         >
             { ratingArray }
         </div>

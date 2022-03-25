@@ -1,4 +1,4 @@
-import { Card } from "..";
+import { Card } from "../Card";
 import styles from "./Product.module.scss";
 import { IProductProps } from "./Product.props";
 
