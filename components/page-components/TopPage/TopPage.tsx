@@ -1,4 +1,5 @@
 import {
+    Advantages,
     Heading,
     Product,
     Tag,
@@ -28,6 +29,9 @@ export function TopPage({ page, products }: ITopPageProps) {
                     middleSalary={page.hh.middleSalary}
                     seniorSalary={page.hh.seniorSalary}
                 />
+            )}
+            {page.advantages?.length > 0 && (
+                <Advantages advantages={page.advantages} />
             )}
         </article>
     );

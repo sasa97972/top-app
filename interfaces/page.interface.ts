@@ -1,6 +1,6 @@
 import { TopLevelCategory } from "../enums/category.enum";
 
-interface IAdvantage {
+export interface IAdvantage {
     title: string;
     description: string;
     _id: string;
