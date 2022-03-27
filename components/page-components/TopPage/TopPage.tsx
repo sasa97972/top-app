@@ -2,6 +2,7 @@ import {
     Advantages,
     Heading,
     Product,
+    Skills,
     Tag,
     Vacancies,
 } from "../..";
@@ -32,6 +33,9 @@ export function TopPage({ page, products }: ITopPageProps) {
             )}
             {page.advantages?.length > 0 && (
                 <Advantages advantages={page.advantages} />
+            )}
+            {page.tags?.length > 0 && (
+                <Skills skills={page.tags} />
             )}
         </article>
     );

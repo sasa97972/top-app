@@ -5,5 +5,6 @@ export * from "./Heading";
 export * from "./Paragraph";
 export * from "./Product";
 export * from "./Rating";
+export * from "./Skills";
 export * from "./Tag";
 export * from "./Vacancies";
