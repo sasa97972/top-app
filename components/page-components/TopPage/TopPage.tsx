@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useReducer } from "react";
 import {
     Advantages,
     Heading,
@@ -10,21 +10,30 @@ import {
     Vacancies,
 } from "../..";
 import { SortEnum } from "../../../enums/sort.enum";
+import { sortProductsByRating } from "../../../helpers/sort";
+import { sortReducer } from "../../../reducers/sort.reducer";
 import styles from "./TopPage.module.scss";
 import { ITopPageProps } from "./TopPage.props";
 
 export function TopPage({ page, products }: ITopPageProps) {
-    const [sort, setSort] = useState<SortEnum>(SortEnum.Rating);
+    const [sortState, dispatchSort] = useReducer(sortReducer, {
+        products: sortProductsByRating(products),
+        sort: SortEnum.Rating,
+    });
+
+    const setSort = (sort: SortEnum): void => {
+        dispatchSort({ type: sort });
+    };
 
     return (
         <article>
             <header className={styles.header}>
                 <Heading className={styles.title} tag="h1">{page.title}</Heading>
                 {products && <Tag className={styles.productCount} color="grey" size="m">{products.length}</Tag>}
-                <Sort className={styles.toolbar} sort={sort} setSort={setSort} />
+                <Sort className={styles.toolbar} sort={sortState.sort} setSort={setSort} />
             </header>
             <div className={styles.productsList}>
-                {products && products.map((product) => (
+                {sortState.products?.map((product) => (
                     <Product key={product._id} title={product.title} />
                 ))}
             </div>
