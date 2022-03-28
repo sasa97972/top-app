@@ -5,6 +5,10 @@
   flex-flow: row wrap;
   align-items: center;
   gap: $margin-default;
+
+  @media screen and (max-width: $media-mobile) {
+    gap: 13px;
+  }
 }
 
 .item {
@@ -19,6 +23,10 @@
     opacity: 0;
     transition: opacity $transition-time;
     visibility: hidden;
+
+    @media screen and (max-width: $media-mobile) {
+      margin-right: 5px;
+    }
   }
 
   &:hover {

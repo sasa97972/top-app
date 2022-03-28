@@ -8,7 +8,7 @@
   grid-template-columns: max-content max-content auto;
 
   @media screen and (max-width: $media-tablet) {
-    grid-template-columns: [start] 1fr 1fr [end];
+    grid-template-columns: [start] auto 1fr [end];
   }
 }
 
