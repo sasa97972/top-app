@@ -1,6 +1,6 @@
 export interface IPagePath {
     params: {
-        alias: string,
-        category: string,
-    }
+        alias: string;
+        category: string;
+    };
 }

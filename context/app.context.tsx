@@ -4,8 +4,8 @@ import { TopLevelCategory } from "../enums/category.enum";
 import { IMenuItem } from "../interfaces/menu.interface";
 
 export interface IAppContext {
-    category: TopLevelCategory,
-    menu: IMenuItem[],
+    category: TopLevelCategory;
+    menu: IMenuItem[];
 }
 
 export const AppContext = createContext<IAppContext>({

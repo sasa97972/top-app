@@ -19,9 +19,10 @@
   ],
   "root": true,
   "rules": {
+    "@typescript-eslint/member-delimiter-style": "warn",
     "@typescript-eslint/indent": ["error", 4],
     "@typescript-eslint/quotes": ["error", "double"],
-    "@typescript-eslint/semi": ["warn"],
+    "@typescript-eslint/semi": ["warn", "always"],
     "@typescript-eslint/no-empty-interface": [
       "error",
       {

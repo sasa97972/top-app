@@ -10,12 +10,12 @@ interface IBlog {
 }
 
 interface IReview {
-    _id: string,
-    name: string,
-    title: string,
-    description: string,
-    rating: number,
-    createdAt: Date,
+    _id: string;
+    name: string;
+    title: string;
+    description: string;
+    rating: number;
+    createdAt: Date;
 }
 
 export interface IProduct {

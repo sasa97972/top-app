@@ -1,3 +1,3 @@
 export interface IProductProps {
-    title: string,
+    title: string;
 }
