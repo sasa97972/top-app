@@ -1,22 +1,27 @@
+import { useState } from "react";
 import {
     Advantages,
     Heading,
     Html,
     Product,
     Skills,
+    Sort,
     Tag,
     Vacancies,
 } from "../..";
+import { SortEnum } from "../../../enums/sort.enum";
 import styles from "./TopPage.module.scss";
 import { ITopPageProps } from "./TopPage.props";
 
 export function TopPage({ page, products }: ITopPageProps) {
+    const [sort, setSort] = useState<SortEnum>(SortEnum.Rating);
+
     return (
         <article>
             <header className={styles.header}>
                 <Heading className={styles.title} tag="h1">{page.title}</Heading>
                 {products && <Tag className={styles.productCount} color="grey" size="m">{products.length}</Tag>}
-                <span className={styles.toolbar}>Сортировка</span>
+                <Sort className={styles.toolbar} sort={sort} setSort={setSort} />
             </header>
             <div className={styles.productsList}>
                 {products && products.map((product) => (
