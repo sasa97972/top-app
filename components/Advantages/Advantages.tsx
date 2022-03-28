@@ -16,7 +16,7 @@ export function Advantages({ advantages, className, ...props }: IAdvantagesProps
                             <CheckIcon />
                             <Heading tag="h3">{advantage.title}</Heading>
                         </div>
-                        <Paragraph className={styles.itemDescription}>{advantage.description}</Paragraph>
+                        <Paragraph className={styles.itemDescription} size="l">{advantage.description}</Paragraph>
                     </div>
                 ))}
             </div>

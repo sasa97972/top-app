@@ -1,6 +1,7 @@
 import {
     Advantages,
     Heading,
+    Html,
     Product,
     Skills,
     Tag,
@@ -34,6 +35,7 @@ export function TopPage({ page, products }: ITopPageProps) {
             {page.advantages?.length > 0 && (
                 <Advantages advantages={page.advantages} />
             )}
+            {page.seoText && <div className={styles.seoText}><Html html={page.seoText} /></div>}
             {page.tags?.length > 0 && (
                 <Skills skills={page.tags} />
             )}

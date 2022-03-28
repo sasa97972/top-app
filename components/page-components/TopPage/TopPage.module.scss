@@ -31,3 +31,20 @@
 .productsList {
   margin-bottom: 50px;
 }
+
+.seoText {
+  margin-bottom: $gap-default;
+
+  p {
+    margin-bottom: $margin-default;
+  }
+
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  h2,
+  h3 {
+    margin: $margin-default 0;
+  }
+}
