@@ -1,3 +1,3 @@
-import { DetailedHTMLProps, HTMLAttributes, PropsWithRef } from "react";
+import { DetailedHTMLProps, InputHTMLAttributes, PropsWithRef } from "react";
 
-export interface IInputProps extends PropsWithRef<DetailedHTMLProps<HTMLAttributes<HTMLInputElement>, HTMLInputElement>> {}
+export interface IInputProps extends PropsWithRef<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>> {}
