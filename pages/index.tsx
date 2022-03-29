@@ -7,6 +7,7 @@ import {
     Paragraph,
     Rating,
     Tag,
+    Textarea,
 } from "../components";
 import { DEFAULT_CATEGORY } from "../config";
 import { getMenuData } from "../helpers";
@@ -65,6 +66,7 @@ export default function Home() {
             </div>
             <div>
                 <Input placeholder="Заголовок" />
+                <Textarea placeholder="Текст отзыва" />
             </div>
         </>
     );
