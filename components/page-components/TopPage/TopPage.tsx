@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import {
     Advantages,
     Heading,
@@ -24,6 +24,10 @@ export function TopPage({ page, products }: ITopPageProps) {
     const setSort = (sort: SortEnum): void => {
         dispatchSort({ type: sort });
     };
+
+    useEffect(() => {
+        dispatchSort({ payload: products, type: "reset" });
+    }, [products]);
 
     return (
         <article>

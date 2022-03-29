@@ -2,7 +2,7 @@ import { SortEnum } from "../enums/sort.enum";
 import { sortProductsByPrice, sortProductsByRating } from "../helpers/sort";
 import { IProduct } from "../interfaces/product.interface";
 
-export type SortActions = { type: SortEnum };
+export type SortActions = { type: SortEnum } | { type: "reset"; payload: IProduct[] };
 
 export interface SortState {
     products: IProduct[];
@@ -20,6 +20,11 @@ export const sortReducer = (state: SortState, action: SortActions): SortState =>
             return {
                 products: sortProductsByPrice(state.products),
                 sort: SortEnum.Price,
+            };
+        case "reset":
+            return {
+                products: sortProductsByRating(action.payload),
+                sort: SortEnum.Rating,
             };
         default:
             return state;
