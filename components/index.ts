@@ -10,3 +10,4 @@ export * from "./Skills";
 export * from "./Sort";
 export * from "./Tag";
 export * from "./Vacancies";
+export * from "./Input";

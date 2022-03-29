@@ -1,14 +1,19 @@
 import { GetStaticProps } from "next";
 import { useState } from "react";
 import {
-    Button, Heading, Paragraph, Rating, Tag,
+    Button,
+    Heading,
+    Input,
+    Paragraph,
+    Rating,
+    Tag,
 } from "../components";
 import { DEFAULT_CATEGORY } from "../config";
 import { getMenuData } from "../helpers";
 import { IHomeProps } from "../interfaces/home.interface";
 import { withLayout } from "../layout";
 
-function Home() {
+export default function Home() {
     const [rating, setRating] = useState<number>(3);
 
     const handleRatingChange = (newRating: number): void => {
@@ -58,13 +63,14 @@ function Home() {
             <div>
                 <Rating rating={2} />
             </div>
+            <div>
+                <Input placeholder="Заголовок" />
+            </div>
         </>
     );
 }
 
 Home.getLayout = withLayout;
-
-export default Home;
 
 export const getStaticProps: GetStaticProps<IHomeProps> = async () => {
     const { data: menu } = await getMenuData(DEFAULT_CATEGORY);

@@ -3,7 +3,7 @@ import { AppPropsWithLayout } from "../types/nextapp";
 
 import "../styles/globals.scss";
 
-function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
+export default function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
     const getLayout = Component.getLayout ?? ((page) => page);
 
     return (
@@ -17,5 +17,3 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
         </>
     );
 }
-
-export default MyApp;
