@@ -8,6 +8,12 @@
   display: block;
   width: 100%;
   padding-right: 36px;
+  border: 1px solid transparent;
+  transition: border-color $transition-time;
+
+  &.error {
+    border: 1px solid $color-red;
+  }
 }
 
 .button {
