@@ -7,6 +7,7 @@ export * from "./Input";
 export * from "./Paragraph";
 export * from "./Product";
 export * from "./Rating";
+export * from "./Search";
 export * from "./Skills";
 export * from "./Sort";
 export * from "./Tag";

@@ -1,7 +1,7 @@
 @import "styles/config/variables";
 
 .firstLevel {
-  display: grid;
+  display: inline-grid;
   align-items: center;
   margin-bottom: $margin-default;
   color: $color-grey-alternate;

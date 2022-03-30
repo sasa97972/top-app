@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import Link from "next/link";
+import { Search } from "../../components";
 import Logo from "../images/logo.svg";
 import { Menu } from "../Menu";
 import styles from "./Sidebar.module.scss";
@@ -13,6 +14,7 @@ export function Sidebar({ className, ...props }: SidebarProps) {
                     <Logo className={styles.logo} />
                 </a>
             </Link>
+            <Search />
             <Menu />
         </aside>
     );
