@@ -3,10 +3,8 @@
     "airbnb",
     "airbnb-typescript",
     "eslint:recommended",
-    "react-app",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react-hooks/recommended",
     "next/core-web-vitals"
   ],
   "ignorePatterns": ["next-env.d.ts", "next-env-custom.d.ts", "next.config.js", "**/node_modules/*"],
