@@ -1,0 +1,56 @@
+@import "../../../styles/config/variables";
+
+.header {
+  display: grid;
+  align-items: center;
+  margin-bottom: $margin-default;
+  gap: $margin-default;
+  grid-template-columns: max-content max-content auto;
+
+  @media screen and (max-width: $media-tablet) {
+    grid-template-columns: [start] auto 1fr [end];
+  }
+}
+
+.title {
+  @media screen and (max-width: $media-tablet) {
+    grid-column: start / end;
+  }
+}
+
+.toolbar {
+  justify-self: end;
+}
+
+.productCount {
+  @media screen and (max-width: $media-tablet) {
+    justify-self: start;
+  }
+}
+
+.productsList {
+  margin-bottom: 50px;
+}
+
+.seoText {
+  margin-bottom: $gap-default;
+
+  p {
+    margin-bottom: $margin-default;
+  }
+
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  h2,
+  h3 {
+    margin: $margin-default 0;
+  }
+
+  ul,
+  ol {
+    font-size: 18px;
+    line-height: 29px;
+  }
+}

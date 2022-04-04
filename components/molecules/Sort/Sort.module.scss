@@ -1,0 +1,45 @@
+@import "../../../styles/config/variables";
+
+.sort {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: $margin-default;
+
+  @media screen and (max-width: $media-mobile) {
+    gap: 13px;
+  }
+}
+
+.item {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  transition: color $transition-time;
+
+  > svg {
+    margin-right: 8px;
+    opacity: 0;
+    transition: opacity $transition-time;
+    visibility: hidden;
+
+    @media screen and (max-width: $media-mobile) {
+      margin-right: 5px;
+    }
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &.active {
+    color: $color-primary;
+    font-weight: 700;
+
+    > svg {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@import "../../../styles/config/variables";
+
+.list {
+  margin-top: $gap-default;
+}
+
+.item {
+  margin-bottom: $gap-default;
+}
+
+.itemTitle {
+  display: grid;
+  align-items: center;
+  margin-bottom: $margin-default;
+  column-gap: $margin-default * 2;
+  grid-template-columns: 50px 1fr;
+
+  @media screen and (max-width: $media-mobile) {
+    column-gap: $margin-default;
+    grid-template-columns: 30px 1fr;
+
+    & > svg {
+      width: 30px;
+    }
+  }
+}
+
+.itemDescription {
+  padding-left: 65px;
+  border-left: 1px solid $color-gainsboro;
+  margin-left: 25px;
+
+  @media screen and (max-width: $media-mobile) {
+    padding-left: 35px;
+    margin-left: 15px;
+  }
+}

@@ -1,0 +1,8 @@
+@import "../../../styles/config/variables";
+
+.list {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: $margin-default;
+  gap: calc(#{$margin-default} / 2);
+}
