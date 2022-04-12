@@ -47,7 +47,7 @@ export const getStaticProps: GetStaticProps<ICourseProps> = async ({ params }: G
 export const getStaticPaths: GetStaticPaths = async () => {
     const menuDatas = await Promise.all(topLevelMenu.map((topLevelItem) => getMenuData(topLevelItem.id)));
 
-    const paths: IPagePath[] = topLevelMenu.reduce<IPagePath[]>((resPaths, topLevelItem, index) => paths.concat(
+    const paths: IPagePath[] = topLevelMenu.reduce<IPagePath[]>((resPaths, topLevelItem, index) => resPaths.concat(
         menuDatas[index].data.flatMap((item) => item.pages.map((page) => ({
             params: {
                 alias: page.alias,
