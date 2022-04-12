@@ -12,48 +12,25 @@ import {
     IMenuThirdLevel,
 } from "./MenuBodyProps";
 
-export function MenuBody({ category, menu }: IMenuBodyProps) {
+function MenuThirdLevel({ pages, route }: IMenuThirdLevel) {
+    const router = useRouter();
     return (
         <>
-            {topLevelMenu.map(({
-                icon, id, route, name,
-            }) => (
-                <div key={id}>
-                    <Link href={`/${route}`}>
+            {pages.map(({ alias, _id: id, title }) => {
+                const pagePathName = `/${route}/${alias}`;
+                return (
+                    <Link href={pagePathName} key={id}>
                         <a
-                            className={classNames(styles.firstLevel, {
-                                [styles.active]: id === category,
+                            className={classNames(styles.thirdLevel, {
+                                [styles.active]: pagePathName === getParsedPathName(router),
                             })}
                         >
-                            {icon}
-                            <span>{name}</span>
+                            {title}
                         </a>
                     </Link>
-                    {id === category && <MenuSecondLevel menu={menu} route={route} />}
-                </div>
-            ))}
-        </>
-    );
-}
-
-function MenuSecondLevel({ menu, route }: IMenuSecondLevel) {
-    const router = useRouter();
-
-    return (
-        <div className={styles.secondBlock}>
-            {menu.map(({ _id: { secondCategory: name }, pages }) => {
-                const isOpenedDefault = pages.some((page) => `/${route}/${page.alias}` === getParsedPathName(router));
-                return (
-                    <MenuSecondItem
-                        isOpenedDefault={isOpenedDefault}
-                        key={name}
-                        name={name}
-                        pages={pages}
-                        route={route}
-                    />
                 );
             })}
-        </div>
+        </>
     );
 }
 
@@ -85,24 +62,47 @@ function MenuSecondItem({
     );
 }
 
-function MenuThirdLevel({ pages, route }: IMenuThirdLevel) {
+function MenuSecondLevel({ menu, route }: IMenuSecondLevel) {
     const router = useRouter();
+
     return (
-        <>
-            {pages.map(({ alias, _id: id, title }) => {
-                const pagePathName = `/${route}/${alias}`;
+        <div className={styles.secondBlock}>
+            {menu.map(({ _id: { secondCategory: name }, pages }) => {
+                const isOpenedDefault = pages.some((page) => `/${route}/${page.alias}` === getParsedPathName(router));
                 return (
-                    <Link href={pagePathName} key={id}>
-                        <a
-                            className={classNames(styles.thirdLevel, {
-                                [styles.active]: pagePathName === getParsedPathName(router),
-                            })}
-                        >
-                            {title}
-                        </a>
-                    </Link>
+                    <MenuSecondItem
+                        isOpenedDefault={isOpenedDefault}
+                        key={name}
+                        name={name}
+                        pages={pages}
+                        route={route}
+                    />
                 );
             })}
+        </div>
+    );
+}
+
+export function MenuBody({ category, menu }: IMenuBodyProps) {
+    return (
+        <>
+            {topLevelMenu.map(({
+                icon, id, route, name,
+            }) => (
+                <div key={id}>
+                    <Link href={`/${route}`}>
+                        <a
+                            className={classNames(styles.firstLevel, {
+                                [styles.active]: id === category,
+                            })}
+                        >
+                            {icon}
+                            <span>{name}</span>
+                        </a>
+                    </Link>
+                    {id === category && <MenuSecondLevel menu={menu} route={route} />}
+                </div>
+            ))}
         </>
     );
 }

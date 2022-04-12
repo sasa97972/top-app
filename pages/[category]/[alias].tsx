@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
-import { TopPage } from "../../components/organisms";
+import { TopPage } from "../../components";
 import { DEFAULT_LIMIT } from "../../config";
 import { getMenuData, getPageData, getProductsData } from "../../helpers";
 import { ICourseProps } from "../../interfaces/course.interface";
@@ -45,18 +45,16 @@ export const getStaticProps: GetStaticProps<ICourseProps> = async ({ params }: G
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    let paths: IPagePath[] = [];
-    for (const topLevelItem of topLevelMenu) {
-        const { data: menu } = await getMenuData(topLevelItem.id);
-        paths = paths.concat(
-            menu.flatMap((item) => item.pages.map((page) => ({
-                params: {
-                    alias: page.alias,
-                    category: topLevelItem.route,
-                },
-            }))),
-        );
-    }
+    const menuDatas = await Promise.all(topLevelMenu.map((topLevelItem) => getMenuData(topLevelItem.id)));
+
+    const paths: IPagePath[] = topLevelMenu.reduce<IPagePath[]>((resPaths, topLevelItem, index) => paths.concat(
+        menuDatas[index].data.flatMap((item) => item.pages.map((page) => ({
+            params: {
+                alias: page.alias,
+                category: topLevelItem.route,
+            },
+        }))),
+    ), []);
 
     return {
         fallback: true,

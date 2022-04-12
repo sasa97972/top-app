@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import { formatSalary } from "../../../helpers";
-import { Card } from "../Card";
 import { Heading } from "../../atoms/Heading";
 import { Tag } from "../../atoms/Tag";
+import { Card } from "../Card";
 import RateIcon from "./icons/star.svg";
 import styles from "./Vacancies.module.scss";
 import { IVacanciesProps } from "./Vacancies.props";
