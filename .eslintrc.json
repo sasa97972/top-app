@@ -10,7 +10,8 @@
   "ignorePatterns": ["next-env.d.ts", "next-env-custom.d.ts", "next.config.js", "**/node_modules/*"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.json",
+    "warnOnUnsupportedTypeScriptVersion": false
   },
   "plugins": [
     "@typescript-eslint"
