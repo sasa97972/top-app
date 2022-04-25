@@ -1,4 +1,12 @@
-module.exports = {
+import { API_DOMAIN } from "./config/domains.mjs";
+
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
+	images: {
+		domains: [API_DOMAIN],
+	},
 	reactStrictMode: true,
 	webpack(config) {
 		config.module.rules.push({
@@ -19,9 +27,11 @@ module.exports = {
 							}],
 						},
 					},
-				},
+				}
 			],
 		});
 		return config;
 	},
 };
+
+export default nextConfig;

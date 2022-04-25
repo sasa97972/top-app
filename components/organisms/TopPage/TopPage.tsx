@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, startTransition } from "react";
 import { SortEnum } from "../../../enums/sort.enum";
 import { sortProductsByRating } from "../../../helpers/sort";
 import { sortReducer } from "../../../reducers/sort.reducer";
@@ -20,11 +20,15 @@ export function TopPage({ page, products }: ITopPageProps) {
     });
 
     const setSort = (sort: SortEnum): void => {
-        dispatchSort({ type: sort });
+        startTransition(() => {
+            dispatchSort({ type: sort });
+        });
     };
 
     useEffect(() => {
-        dispatchSort({ payload: products, type: "reset" });
+        startTransition(() => {
+            dispatchSort({ payload: products, type: "reset" });
+        });
     }, [products]);
 
     return (
