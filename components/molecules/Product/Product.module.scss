@@ -1,21 +1,86 @@
 @import "../../../styles/config/variables";
 
 .product {
+  display: grid;
   padding: $gap-default;
+  grid-template-columns:
+    [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr
+    [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratingstart] auto [end];
 
   & + & {
     margin-top: $margin-default;
   }
 }
 
-.title {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 27px;
+.logo {
+  grid-column: start / logoend;
+  grid-row: 1 / span 2;
 }
 
 .logoContainer {
   position: relative;
   width: 70px;
   height: 70px;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  grid-column: titlestart / middle;
+  line-height: 27px;
+}
+
+.price {
+  margin: 0;
+  grid-column: pricestart / priceend;
+}
+
+.credit {
+  margin: 0;
+  grid-column: creditstart / creditend;
+}
+
+.rating {
+  grid-column: ratingstart / end;
+}
+
+.tags {
+  grid-column: titlestart / middle;
+}
+
+.priceTitle {
+  margin: 0;
+  grid-column: pricestart / priceend;
+}
+
+.creditTitle {
+  margin: 0;
+  grid-column: creditstart / creditend;
+}
+
+.ratingTitle {
+  margin: 0;
+  grid-column: ratingstart / end;
+}
+
+.description {
+  grid-column: start / end;
+}
+
+.features {
+  grid-column: start / middle;
+}
+
+.advantages {
+  grid-column: middle / end;
+}
+
+.actions {
+  grid-column: start / end;
+}
+
+.hr {
+  width: 100%;
+  grid-column: start / end;
 }

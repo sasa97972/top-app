@@ -31,6 +31,7 @@ export interface IProduct {
     oldPrice: number;
     characteristics: ICharacteristic[];
     advantages: string;
+    disadvantages?: string;
     initialRating: number;
     createdAt: Date;
     updatedAt: Date;
