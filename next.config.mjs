@@ -1,11 +1,11 @@
-import { API_DOMAIN } from "./config/domains.mjs";
+import { API_DOMAIN, IMAGES_DOMAINS } from "./config/domains.mjs";
 
 /**
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
 	images: {
-		domains: [API_DOMAIN],
+		domains: [API_DOMAIN].concat(IMAGES_DOMAINS),
 	},
 	reactStrictMode: true,
 	webpack(config) {
