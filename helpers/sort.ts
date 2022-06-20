@@ -5,5 +5,5 @@ export const sortProductsByPrice = (products: IProduct[]): IProduct[] => (
 );
 
 export const sortProductsByRating = (products: IProduct[]): IProduct[] => (
-    [...products].sort((a, b) => a.initialRating - b.initialRating)
+    [...products].sort((a, b) => (b.reviewAvg ?? b.initialRating) - (a.reviewAvg ?? a.initialRating))
 );
