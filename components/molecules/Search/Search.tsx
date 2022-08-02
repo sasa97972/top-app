@@ -42,7 +42,7 @@ export function Search({ className, ...props }: ISearchProps) {
     };
 
     const handleBlur: FocusEventHandler<HTMLInputElement> = (): void => {
-        if (error && isSearchValid(search)) {
+        if (search === "" || (error && isSearchValid(search))) {
             setError(false);
             setPlaceholder("Поиск...");
         }
