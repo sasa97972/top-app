@@ -12,10 +12,6 @@
     transition: color $transition-time;
   }
 
-  & + & {
-    margin-left: 5px;
-  }
-
   &.s {
     font-size: 12px;
     line-height: 12px;
