@@ -17,14 +17,9 @@
   grid-row: 1 / span 2;
 }
 
-.logoContainer {
-  position: relative;
-  width: 70px;
-  height: 70px;
-}
-
 .title {
-  margin: 0;
+  align-self: flex-end;
+  margin: 0 0 4.5px;
   font-size: 20px;
   font-weight: 600;
   grid-column: titlestart / middle;
@@ -32,20 +27,33 @@
 }
 
 .price {
+  align-self: flex-end;
   margin: 0;
+  font-size: 20px;
+  font-weight: 400;
   grid-column: pricestart / priceend;
 }
 
 .credit {
+  align-self: flex-end;
   margin: 0;
+  font-size: 20px;
+  font-weight: 400;
   grid-column: creditstart / creditend;
 }
 
 .rating {
+  align-self: flex-end;
   grid-column: ratingstart / end;
+  line-height: 22px;
 }
 
 .tags {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  margin: 4.5px 0 0;
+  gap: 5px;
   grid-column: titlestart / middle;
 }
 
@@ -82,5 +90,30 @@
 
 .hr {
   width: 100%;
+  border-width: 1px 0 0;
+  border-top: 1px solid $color-grey-light;
+  margin-top: 18px;
+  margin-bottom: 22px;
   grid-column: start / end;
+}
+
+.logoContainer {
+  position: relative;
+  width: 70px;
+  height: 70px;
+}
+
+.logoImg {
+  border-radius: 5px;
+}
+
+.smallText {
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.smallTitle {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 19px;
 }

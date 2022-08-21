@@ -1,9 +1,12 @@
+import clx from "classnames";
 import Image from "next/image";
 import { IMAGE_URL } from "../../../config";
+import { formatSalary } from "../../../helpers";
 import { Button, Tag } from "../../atoms";
 import { Card } from "../Card";
 import { Rating } from "../Rating";
 import styles from "./Product.module.scss";
+
 import { IProductProps } from "./Product.props";
 
 export function Product({
@@ -25,6 +28,7 @@ export function Product({
                 <div className={styles.logoContainer}>
                     <Image
                         alt={title}
+                        className={styles.logoImg}
                         objectFit="cover"
                         layout="fill"
                         src={image.search(/^https?/) !== -1 ? image : `${IMAGE_URL}${image}`}
@@ -32,15 +36,18 @@ export function Product({
                 </div>
             </div>
             <p className={styles.title}>{title}</p>
-            <p className={styles.price}>{price}</p>
-            <p className={styles.credit}>{credit}</p>
+            <p className={styles.price}>{formatSalary(price)}</p>
+            <p className={styles.credit}>
+                {formatSalary(credit)}
+                <span className={styles.smallText}>/мес</span>
+            </p>
             <div className={styles.rating}><Rating rating={reviewAvg ?? initialRating} /></div>
             <div className={styles.tags}>
                 {categories.map((category) => <Tag color="ghost" key={category}>{category}</Tag>)}
             </div>
-            <p className={styles.priceTitle}>цена</p>
-            <p className={styles.creditTitle}>кредит</p>
-            <p className={styles.ratingTitle}>
+            <p className={clx(styles.priceTitle, styles.smallTitle)}>цена</p>
+            <p className={clx(styles.creditTitle, styles.smallTitle)}>кредит</p>
+            <p className={clx(styles.ratingTitle, styles.smallTitle)}>
                 {reviewCount}
                 {" "}
                 отзывов
