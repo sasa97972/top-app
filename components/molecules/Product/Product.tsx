@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useMemo } from "react";
 import { IMAGE_URL } from "../../../config";
 import { formatSalary } from "../../../helpers";
-import { Button, Tag } from "../../atoms";
+import { Button, Divider, Tag } from "../../atoms";
 import { Card } from "../Card";
 import { Rating } from "../Rating";
 import styles from "./Product.module.scss";
@@ -63,7 +63,7 @@ export function Product({
                 {" "}
                 отзывов
             </p>
-            <hr className={styles.hr} />
+            <Divider className={styles.divider} />
             <div className={styles.description}>{description}</div>
             <div className={styles.features}>Features</div>
             <div className={styles.advantages}>
@@ -80,7 +80,7 @@ export function Product({
                     )
                 }
             </div>
-            <hr className={styles.hr} />
+            <Divider className={styles.divider} />
             <div className={styles.actions}>
                 <Button appearance="primary">Узнать подробнее</Button>
                 <Button appearance="secondary" arrow="right">Читать отзывы</Button>

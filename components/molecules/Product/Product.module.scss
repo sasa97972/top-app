@@ -19,7 +19,7 @@
 
 .title {
   align-self: flex-end;
-  margin: 0 0 4.5px;
+  margin: 0 0 5px;
   font-size: 20px;
   font-weight: 600;
   grid-column: titlestart / middle;
@@ -52,7 +52,7 @@
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
-  margin: 4.5px 0 0;
+  margin: 5px 0 0;
   gap: 5px;
   grid-column: titlestart / middle;
 }
@@ -88,12 +88,7 @@
   grid-column: start / end;
 }
 
-.hr {
-  width: 100%;
-  border-width: 1px 0 0;
-  border-top: 1px solid $color-grey-light;
-  margin-top: 18px;
-  margin-bottom: 22px;
+.divider {
   grid-column: start / end;
 }
 
