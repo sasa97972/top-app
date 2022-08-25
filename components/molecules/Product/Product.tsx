@@ -1,5 +1,6 @@
 import clx from "classnames";
 import Image from "next/image";
+import { useMemo } from "react";
 import { IMAGE_URL } from "../../../config";
 import { formatSalary } from "../../../helpers";
 import { Button, Tag } from "../../atoms";
@@ -17,11 +18,17 @@ export function Product({
     disadvantages,
     image,
     initialRating,
+    oldPrice,
     price,
     reviewAvg,
     reviewCount,
     title,
 }: IProductProps) {
+    const priceDiff = useMemo<number | null>(
+        () => (typeof oldPrice === "number" ? price - oldPrice : null),
+        [oldPrice, price],
+    );
+
     return (
         <Card className={styles.product}>
             <div className={styles.logo}>
@@ -36,7 +43,11 @@ export function Product({
                 </div>
             </div>
             <p className={styles.title}>{title}</p>
-            <p className={styles.price}>{formatSalary(price)}</p>
+            <div className={styles.price}>
+                {formatSalary(price)}
+                {typeof priceDiff === "number"
+                    && <Tag className={styles.priceTag} color="green" size="s">{formatSalary(priceDiff)}</Tag>}
+            </div>
             <p className={styles.credit}>
                 {formatSalary(credit)}
                 <span className={styles.smallText}>/мес</span>

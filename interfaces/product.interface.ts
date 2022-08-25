@@ -28,7 +28,7 @@ export interface IProduct {
     link: string;
     price: number;
     credit: number;
-    oldPrice: number;
+    oldPrice?: number;
     characteristics: ICharacteristic[];
     advantages: string;
     disadvantages?: string;
