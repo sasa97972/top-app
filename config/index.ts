@@ -1,5 +1,5 @@
-import { TopLevelCategory } from "../enums/category.enum";
-import { API_DOMAIN } from "./domains";
+import { API_DOMAIN } from './domains';
+import { TopLevelCategory } from '../enums/category.enum';
 
 export const DEFAULT_CATEGORY = TopLevelCategory.Courses;
 export const DEFAULT_LIMIT = 10;

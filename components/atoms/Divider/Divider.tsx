@@ -1,8 +1,8 @@
-import cn from "classnames";
-import styles from "./Divider.module.scss";
+import cn from 'classnames';
+import styles from './Divider.module.scss';
 
-import { DividerProps } from "./Divider.props";
+import { DividerProps } from './Divider.props';
 
 export function Divider({ className, ...props }: DividerProps) {
-    return <hr className={cn(styles.hr, className)} {...props} />;
+  return <hr className={cn(styles.hr, className)} {...props} />;
 }

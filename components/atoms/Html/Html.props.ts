@@ -1,3 +1,3 @@
 export interface IHtmlProps {
-    html: string;
+  html: string;
 }

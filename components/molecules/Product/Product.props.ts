@@ -1,3 +1,3 @@
-import { IProduct } from "../../../interfaces/product.interface";
+import { IProduct } from '../../../interfaces/product.interface';
 
 export interface IProductProps extends IProduct {}

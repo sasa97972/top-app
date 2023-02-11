@@ -19,8 +19,8 @@
   "root": true,
   "rules": {
     "@typescript-eslint/member-delimiter-style": "warn",
-    "@typescript-eslint/indent": ["error", 4],
-    "@typescript-eslint/quotes": ["error", "double"],
+    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/quotes": ["error", "single"],
     "@typescript-eslint/semi": ["warn", "always"],
     "@typescript-eslint/no-empty-interface": [
       "error",
@@ -42,8 +42,8 @@
     "no-multiple-empty-lines": "error",
     "no-underscore-dangle": "off",
     "object-curly-spacing": ["error", "always"],
-    "react/jsx-indent": ["error", 4],
-    "react/jsx-indent-props": ["error", 4],
+    "react/jsx-indent": ["error", 2],
+    "react/jsx-indent-props": ["error", 2],
     "react/jsx-props-no-spreading": "off",
     "react/jsx-wrap-multilines": "error",
     "semi": "off",
@@ -51,6 +51,6 @@
     "space-in-parens": "error",
     "spaced-comment": "error",
     "template-curly-spacing": ["error", "never"],
-    "quotes": ["error", "double"]
+    "quotes": ["error", "single"]
   }
 }
