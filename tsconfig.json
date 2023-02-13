@@ -21,6 +21,8 @@
     "jsx": "preserve"
   },
   "include": [
+    "next.config.mjs",
+    "config/domains.mjs",
     "next-env-custom.d.ts",
     "**/*.ts",
     "**/*.tsx"

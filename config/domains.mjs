@@ -1,7 +1,9 @@
-export const API_DOMAIN = "courses-top.ru"
-export const IMAGES_DOMAINS = ["cdn-bucket.hb.bizmrg.com"]
+export const API_DOMAIN = 'courses-top.ru';
+export const IMAGES_DOMAINS = ['cdn-bucket.hb.bizmrg.com'];
 
-export default {
+const config = {
   API_DOMAIN,
-  IMAGES_DOMAINS
-}
+  IMAGES_DOMAINS,
+};
+
+export default config;
